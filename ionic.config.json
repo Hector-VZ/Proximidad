@@ -1,6 +1,6 @@
 {
   "name": "Proximidad",
-  "app_id": "",
+  "app_id": "e10288a0",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

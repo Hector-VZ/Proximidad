@@ -1,14 +1,38 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+    Triangulación
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
+  Eddystone Protocol
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
   </p>
+
+  <div *ngIf="!beaconData; else beaconFound">
+    <ion-card>
+      <ion-card-header>
+        <p>Scanear Beacons</p>
+<button ion-button (click)="scanBeacon()">Buscar</button>
+      </ion-card-header>
+    </ion-card>
+    
+  </div>
+  <ng-template #beaconFound>
+    <ion-card-header>
+      Beacon Encontrado
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>{{beaconData.address}}</ion-item>
+        <ion-item>{{beaconData.temperature}}</ion-item>
+        <ion-item>{{beaconData.rssi}}</ion-item>
+        <ion-item>{{beaconData.address}}</ion-item>
+              </ion-list>
+              <a [href]="beaconData.url">URL</a>
+    </ion-card-content>
+  </ng-template>
 </ion-content>
